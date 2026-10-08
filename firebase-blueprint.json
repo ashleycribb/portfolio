@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User account and subscription data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "isPro": { "type": "boolean", "description": "Whether the user has a pro subscription" },
+        "customDomain": { "type": "string", "description": "The user's custom domain name" },
+        "stripeCustomerId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Portfolio": {
+      "title": "Portfolio",
+      "description": "User's portfolio configuration",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "config": { "type": "object", "description": "The full portfolio configuration JSON" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "config"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/portfolios/{userId}": {
+      "schema": "Portfolio",
+      "description": "User portfolio data"
+    }
+  }
+}

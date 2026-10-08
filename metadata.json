@@ -1,0 +1,8 @@
+{
+  "name": "Academic & Research Portfolio Builder",
+  "description": "An automated, low-friction platform for academics, researchers, and PhD students with BibTeX import/export, Schema.org SEO, grants, teaching, and real-time Firestore sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
